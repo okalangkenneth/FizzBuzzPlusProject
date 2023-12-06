@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ModifiedFizzBuzzProject
+namespace FizzBuzzPlusProject
 {
     class Program
     {
