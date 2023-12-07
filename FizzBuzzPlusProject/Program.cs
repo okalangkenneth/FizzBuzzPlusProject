@@ -4,7 +4,7 @@ namespace FizzBuzzPlusProject
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             // Configure Serilog for logging
             Log.Logger = new LoggerConfiguration()
@@ -42,7 +42,7 @@ namespace FizzBuzzPlusProject
                     switch (option)
                     {
                         case "1":
-                            RunFizzBuzzPlus();
+                            await RunFizzBuzzPlusAsync();
                             break;
                         case "2":
                             DisplayInstructions();
@@ -65,7 +65,7 @@ namespace FizzBuzzPlusProject
             }
         }
 
-        private static void RunFizzBuzzPlus()
+        private static async Task RunFizzBuzzPlusAsync()
         {
             Console.Write("Enter start number: ");
             int start = Convert.ToInt32(Console.ReadLine());
@@ -73,7 +73,7 @@ namespace FizzBuzzPlusProject
             int end = Convert.ToInt32(Console.ReadLine());
 
             FizzBuzzPlusService fizzBuzzPlus = new FizzBuzzPlusService();
-            string output = fizzBuzzPlus.Execute(start, end);
+            string output = await fizzBuzzPlus.ExecuteAsync(start, end);
             Console.WriteLine(output);
         }
 

@@ -1,4 +1,6 @@
 using FizzBuzzPlusProject;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace FizzBuzzPlusServiceTests
 {
@@ -15,10 +17,10 @@ namespace FizzBuzzPlusServiceTests
         [InlineData(3)]
         [InlineData(13)]
         [InlineData(31)]
-        public void Execute_ReturnsFizzForMultiplesOrContainsThree(int number)
+        public async Task Execute_ReturnsFizzForMultiplesOrContainsThree(int number)
         {
             // Act
-            var result = _plusFizzBuzzPlusService.Execute(number, number);
+            var result = await _plusFizzBuzzPlusService.ExecuteAsync(number, number);
 
             // Assert
             Assert.Equal($"Fizz{Environment.NewLine}", result);
@@ -28,15 +30,15 @@ namespace FizzBuzzPlusServiceTests
         [InlineData(5)]
         [InlineData(10)]
         [InlineData(52)]
-        public void Execute_ReturnsBuzzForMultiplesOrContainsFive(int number)
+        public async Task Execute_ReturnsBuzzForMultiplesOrContainsFive(int number)
         {
             // Act
-            var result = _plusFizzBuzzPlusService.Execute(number, number);
+            var result = await _plusFizzBuzzPlusService.ExecuteAsync(number, number);
 
             // Assert
             Assert.Equal($"Buzz{Environment.NewLine}", result);
         }
 
-        // Additional tests... ?!
+        // Additional tests can be added here...
     }
 }
