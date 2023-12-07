@@ -1,8 +1,12 @@
 ﻿using Serilog;
 using System.Text;
 
-namespace FizzBuzzPlusProject
+namespace FizzBuzzPlusProject.Model
 {
+    /// <summary>
+    /// Represents the service or model component in the MVC pattern for FizzBuzzPlus.
+    /// This class contains the business logic for generating the FizzBuzzPlus sequence.
+    /// </summary>
     public class FizzBuzzPlusService
     {
         /// <summary>

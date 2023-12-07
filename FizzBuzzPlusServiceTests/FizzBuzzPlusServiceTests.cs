@@ -1,6 +1,4 @@
-using FizzBuzzPlusProject;
-using System.Threading.Tasks;
-using Xunit;
+using FizzBuzzPlusProject.Model;
 
 namespace FizzBuzzPlusServiceTests
 {
